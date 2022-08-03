@@ -98,3 +98,4 @@ jobs:
         if: ${{ github.event_name == 'pull_request' }}
         with:
           message: "The Docker Image can now be found here: ghcr.io/${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.name }}:${{ steps.pr.outputs.pr }}"
+          repo-token: ${{ github.token }}
