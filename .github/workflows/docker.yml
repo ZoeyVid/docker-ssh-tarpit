@@ -21,7 +21,6 @@ jobs:
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
         with:
-          driver: docker
           platforms: all
 
       - name: Set up Docker Buildx
@@ -66,6 +65,7 @@ jobs:
            ghcr.io/${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.name }}:${{ github.ref_name }}
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
+          load: ${{ github.ref != 'refs/heads/develop' }}
           
       - name: show version
         if: ${{ github.event_name != 'pull_request' }}
