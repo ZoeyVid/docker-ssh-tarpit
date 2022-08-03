@@ -67,7 +67,7 @@ jobs:
           cache-to: type=local,dest=/tmp/.buildx-cache
           
       - name: show version
-        if: ${{ github.event_name != 'pull_request' }} || ${{ github.ref == 'refs/heads/develop' }}
+        if: (${{ github.event_name != 'pull_request' }} && ${{ github.ref == 'refs/heads/develop' }})
         run: | 
          docker run --rm --entrypoint ssh-tarpit ${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.name }}:${{ github.ref_name }} --help
          docker run --rm --entrypoint ssh-tarpit ghcr.io/${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.name }}:${{ github.ref_name }} --help
