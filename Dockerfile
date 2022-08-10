@@ -1,4 +1,4 @@
-FROM --platform=${BUILDPLATFORM} python:3.10.6-alpine3.16
+FROM --platform=${BUILDPLATFORM} python:3.9.13-alpine3.16
 RUN pip install --no-cache-dir ssh-tarpit
 EXPOSE 22
 LABEL org.opencontainers.image.source="https://github.com/SanCraftDev/docker-ssh-tarpit"
