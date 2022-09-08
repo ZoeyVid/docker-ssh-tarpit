@@ -1,4 +1,4 @@
-FROM --platform=${BUILDPLATFORM} python:3.9.13-alpine3.16
+FROM --platform=${BUILDPLATFORM} python:3.9.14-alpine3.16
 RUN pip install --no-cache-dir ssh-tarpit
 RUN ssh-tarpit -h
 RUN apk add --no-cache netcat-openbsd
