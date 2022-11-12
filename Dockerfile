@@ -1,8 +1,8 @@
-FROM --platform=${BUILDPLATFORM} python:3.11.0-alpine3.16
+FROM alpine:20221110
 
+RUN apk add --no-cache python3 py3-pip netcat-openbsd
 RUN pip install --no-cache-dir ssh-tarpit
 RUN ssh-tarpit -h
-RUN apk add --no-cache netcat-openbsd
 
 LABEL org.opencontainers.image.source="https://github.com/SanCraftDev/docker-ssh-tarpit"
 
