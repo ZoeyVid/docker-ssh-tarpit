@@ -1,7 +1,8 @@
 FROM alpine:20221110
 
-RUN apk add --no-cache python3 py3-pip netcat-openbsd
-RUN pip install --no-cache-dir ssh-tarpit
+RUN apk upgrade --no-cache && \
+    apk add --no-cache python3 py3-pip netcat-openbsd && \
+    pip install --no-cache-dir ssh-tarpit
 RUN ssh-tarpit -h
 
 LABEL org.opencontainers.image.source="https://github.com/SanCraftDev/docker-ssh-tarpit"
