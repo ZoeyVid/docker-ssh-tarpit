@@ -4,7 +4,6 @@ RUN apk upgrade --no-cache && \
     apk add --no-cache ca-certificates wget tzdata python3 py3-pip netcat-openbsd && \
     pip install --no-cache-dir ssh-tarpit && \
     apk del --no-cache py3-pip
-RUN ssh-tarpit -h
 
 EXPOSE 22
 ENTRYPOINT ssh-tarpit
