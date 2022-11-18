@@ -1,7 +1,7 @@
 FROM alpine:20221110
 
 RUN apk upgrade --no-cache
-RUN apk add --no-cache ca-certificates wget python3 py3-pip netcat-openbsd
+RUN apk add --no-cache ca-certificates wget tzdata python3 py3-pip netcat-openbsd
 RUN pip install --no-cache-dir ssh-tarpit
 RUN ssh-tarpit -h
 
