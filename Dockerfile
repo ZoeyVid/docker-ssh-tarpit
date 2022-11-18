@@ -6,6 +6,6 @@ RUN apk upgrade --no-cache && \
     apk del --no-cache py3-pip
 
 EXPOSE 22
-ENTRYPOINT ssh-tarpit
-CMD -a 0.0.0.0 -p 22 -f /var/log/tarpit.log
+ENTRYPOINT ["ssh-tarpit"]
+CMD ["-a", "0.0.0.0", "-p", "22", "-f", "/var/log/tarpit.log"]
 HEALTHCHECK CMD nc -z localhost 22 || exit 1
