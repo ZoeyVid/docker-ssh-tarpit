@@ -5,8 +5,7 @@ version: "3"
 services:
     ssh-tarpit:
         container_name: ssh-tarpit
-        image: sancraftdev/docker-ssh-tarpit:latest
-#        image: sancraftdev/docker-ssh-tarpit:develop
+        image: zoeyvid/docker-ssh-tarpit:latest
         restart: always
         ports:
         - "22:22"
