@@ -5,7 +5,7 @@ version: "3"
 services:
     ssh-tarpit:
         container_name: ssh-tarpit
-        image: zoeyvid/docker-ssh-tarpit:latest
+        image: zoeyvid/docker-ssh-tarpit
         restart: always
         ports:
         - "22:22"
