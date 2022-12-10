@@ -7,5 +7,5 @@ RUN apk upgrade --no-cache && \
     rm -rf /tmp/pip.pyz
 
 ENTRYPOINT ["ssh-tarpit"]
-CMD ["-D", "-a", "0.0.0.0", "-a", "::", "-p", "22", "-f", "/var/log/tarpit.log"]
+CMD ["-a", "0.0.0.0", "-p", "22", "-f", "/var/log/tarpit.log"]
 HEALTHCHECK CMD nc -z localhost 22 || exit 1
