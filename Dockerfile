@@ -1,7 +1,6 @@
 FROM python:3.11.2-alpine3.17
 
-RUN apk upgrade --no-cache && \
-    apk add --no-cache ca-certificates tzdata netcat-openbsd && \
+RUN apk add --no-cache ca-certificates tzdata netcat-openbsd && \
     pip install --no-cache-dir ssh-tarpit
 
 ENTRYPOINT ["ssh-tarpit"]
