@@ -1,4 +1,4 @@
-FROM python:3.11.4-alpine3.18
+FROM python:3.11.5-alpine3.18
 
 RUN apk add --no-cache ca-certificates tzdata tini netcat-openbsd && \
     pip install --no-cache-dir ssh-tarpit
