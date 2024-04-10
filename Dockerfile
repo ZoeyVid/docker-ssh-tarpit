@@ -1,4 +1,4 @@
-FROM python:3.12.2-alpine3.19
+FROM python:3.12.3-alpine3.19
 
 RUN apk upgrade --no-cache -a && \
     apk add --no-cache ca-certificates tzdata tini netcat-openbsd && \
