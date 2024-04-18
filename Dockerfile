@@ -9,3 +9,4 @@ USER nobody
 ENTRYPOINT ["tini", "--", "ssh-tarpit"]
 CMD ["-a", "0.0.0.0", "-p", "22", "-f", "/var/log/tarpit.log"]
 HEALTHCHECK CMD nc -z localhost 22 || exit 1
+EXPOSE 22/tcp
