@@ -1,5 +1,7 @@
 # docker-ssh-tarpit
 
+This docker image runs https://github.com/Snawoot/ssh-tarpit rootless.
+
 ```yaml
 services:
   ssh-tarpit:
