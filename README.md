@@ -10,8 +10,8 @@ services:
     restart: always
     ports:
       - "22:22"
-    volumes:
-      - "/opt/tarpit.log:/var/log/tarpit.log"
+#    volumes:
+#      - "/opt/tarpit.log:/var/log/tarpit.log"
     environment:
       - "TZ=Europe/Berlin"
 ```
