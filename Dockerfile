@@ -4,7 +4,7 @@ FROM python:3.12.3-alpine3.19
 RUN apk upgrade --no-cache -a && \
     apk add --no-cache ca-certificates tzdata tini netcat-openbsd && \
     pip install --no-cache-dir ssh-tarpit && \
-    chmod -R 666 /var/log
+    chown -R nobody:nobody /var/log
 
 USER nobody
 ENTRYPOINT ["tini", "--", "ssh-tarpit"]
