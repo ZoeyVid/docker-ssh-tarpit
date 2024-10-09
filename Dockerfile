@@ -1,5 +1,6 @@
 # syntax=docker/dockerfile:labs
 FROM python:3.13.0-alpine3.20
+ENV PYTHONUNBUFFERED=1
 
 RUN apk upgrade --no-cache -a && \
     apk add --no-cache ca-certificates tzdata tini netcat-openbsd && \
