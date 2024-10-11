@@ -1,10 +1,18 @@
 # syntax=docker/dockerfile:labs
+FROM python:3.13.0-alpine3.20 AS pip
+ENV PYTHONUNBUFFERED=1
+COPY requirements.txt /tmp/requirements.txt
+RUN apk upgrade --no-cache -a && \
+    apk add --no-cache ca-certificates && \
+    python3 -m venv /usr/local && \
+    pip install --no-cache-dir -r /tmp/requirements.txt
+
 FROM python:3.13.0-alpine3.20
 ENV PYTHONUNBUFFERED=1
+COPY --from=pip /usr/local /usr/local
 
 RUN apk upgrade --no-cache -a && \
     apk add --no-cache ca-certificates tzdata tini netcat-openbsd && \
-    pip install --no-cache-dir ssh-tarpit && \
     chown -R nobody:nobody /var/log
 
 USER nobody
