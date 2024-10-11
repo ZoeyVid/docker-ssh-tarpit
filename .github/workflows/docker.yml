@@ -4,13 +4,13 @@ on:
     branches:
       - develop
     paths:
-      - ssh-tarpit
       - Dockerfile
+      - requirements.txt
       - .github/workflows/docker.yml
   pull_request:
     paths:
-      - ssh-tarpit
       - Dockerfile
+      - requirements.txt
       - .github/workflows/docker.yml
   workflow_dispatch:
 jobs:
